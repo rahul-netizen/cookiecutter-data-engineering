@@ -31,3 +31,9 @@ repos:
     rev: stable
     hooks:
     - id: flake8
+
+-   repo: https://github.com/PyCQA/bandit
+    rev: stable
+    hooks:
+    -   id: bandit
+    -   description: 'Bandit is a tool for finding common security issues in Python code'
