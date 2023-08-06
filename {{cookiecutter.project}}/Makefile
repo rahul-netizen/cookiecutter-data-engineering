@@ -14,7 +14,7 @@ type:
 lint:
 		flake8 *.py
 
-security:
+secure:
 		bandit -r ./{{cookiecutter.project}}
 
-ci : format type lint
+ci : format type lint secure
