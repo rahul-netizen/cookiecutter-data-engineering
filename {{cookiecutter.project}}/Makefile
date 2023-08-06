@@ -12,6 +12,9 @@ type:
 		python -m mypy *.py
 
 lint:
-		flake8 some.py
+		flake8 *.py
+
+security:
+		bandit -r ./{{cookiecutter.project}}
 
 ci : format type lint
