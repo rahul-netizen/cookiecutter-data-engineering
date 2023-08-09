@@ -6,6 +6,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 from datetime import datetime
+from dotenv import load_dotenv, set_key, find_dotenv
 
 import pd
 import re
