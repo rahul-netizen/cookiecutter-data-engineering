@@ -12,4 +12,5 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v3
+    - run: pre-commit autoupdate
     - uses: pre-commit/action@v3.0.0
