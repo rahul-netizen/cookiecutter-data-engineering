@@ -14,8 +14,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-          name: [3.7,3.9]
+          python-version: [3.7,3.9]
+          os: [ubuntu-latest, macOS-latest, windows-latest]
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v3
+      
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Run precommit hooks    
       - uses: pre-commit/action@v3.0.0
