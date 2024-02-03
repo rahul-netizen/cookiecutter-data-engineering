@@ -1,15 +1,21 @@
 name: pre-commit
 
 on:
-  pull_request:
   push:
-    branches: [main]
+    branches: 
+      - main
+  pull_request:
+    branches: 
+      - main
   workflow_dispatch:
   
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+          name: [3.7,3.9]
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v3
-    - uses: pre-commit/action@v3.0.0
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v3
+      - uses: pre-commit/action@v3.0.0
